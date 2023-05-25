@@ -9,7 +9,7 @@ main {
 /* Set flex-direction: column for the body container */
 body {
     flex-direction: column;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     /* Ensure body takes up at least the full viewport height */
 }
 
@@ -37,9 +37,9 @@ aside {
 }
 
 /* Position the footer at the bottom of the page */
-footer {
+/* footer {
     margin-top: auto;
-}
+} */
 
 /* Additional Styles */
 
@@ -69,9 +69,9 @@ article a:hover {
     color: transparent;
 }
 
-footer {
+/* footer {
     margin-top: auto;
     background-color: #302424;
     padding: 10px;
     text-align: center;
-}
+} */
