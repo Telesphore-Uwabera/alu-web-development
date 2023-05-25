@@ -63,7 +63,7 @@ article {
 }
 
 article a:hover {
-    background-image: linear-gradient(to bottom, #ffcc00, #ff9900);
+    background-image: linear-gradient(to bottom, #3a3832, #705937);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -71,7 +71,7 @@ article a:hover {
 
 footer {
     margin-top: auto;
-    background-color: #992222;
+    background-color: #302424;
     padding: 10px;
     text-align: center;
 }
