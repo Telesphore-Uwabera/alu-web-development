@@ -9,16 +9,15 @@ main {
 /* Set flex-direction: column for the body container */
 body {
     flex-direction: column;
+    min-height: 100vh;
+    /* Ensure body takes up at least the full viewport height */
 }
 
 /* Set flex-direction: row for the main container */
 main {
     flex-direction: row;
-}
-
-/* Set flex: auto for the main container to maintain automatic height and width */
-main {
-    flex: auto;
+    flex-grow: 1;
+    /* Allow main to grow and occupy remaining vertical space */
 }
 
 /* Set flex: 2 for the article container to occupy 2/3 of the width */
@@ -35,4 +34,9 @@ aside {
 article,
 aside {
     overflow-y: auto;
+}
+
+/* Position the footer at the bottom of the page */
+footer {
+    margin-top: auto;
 }
