@@ -1,0 +1,38 @@
+/* styles.css */
+
+/* Set display:flex for body and main containers */
+body,
+main {
+    display: flex;
+}
+
+/* Set flex-direction: column for the body container */
+body {
+    flex-direction: column;
+}
+
+/* Set flex-direction: row for the main container */
+main {
+    flex-direction: row;
+}
+
+/* Set flex: auto for the main container to maintain automatic height and width */
+main {
+    flex: auto;
+}
+
+/* Set flex: 2 for the article container to occupy 2/3 of the width */
+article {
+    flex: 2;
+}
+
+/* Set flex: 1 for the aside container to occupy 1/3 of the width */
+aside {
+    flex: 1;
+}
+
+/* Enable scrolling within article and aside containers */
+article,
+aside {
+    overflow-y: auto;
+}
