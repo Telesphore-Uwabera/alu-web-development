@@ -52,8 +52,12 @@
         }
 
         section>div:nth-child(2)>div>div>img {
-            margin: 0 10px;
+            margin: 0 5px;
             /* Adjust the margin as needed */
+            max-width: 80px;
+            /* Set the maximum width of the images */
+            max-height: 80px;
+            /* Set the maximum height of the images */
         }
 
         section>div:nth-child(2)>div>div>div {
@@ -67,6 +71,8 @@
         .row-block {
             display: flex;
             flex-direction: row;
+            justify-content: center;
+            /* Added */
         }
 
         .item-block {
@@ -165,8 +171,8 @@
 
         <section>
             <h2>Videos List</h2>
-            <div>
-                <div>
+            <div class="row-block">
+                <div class="item-block">
                     <video src="Rwanda Ngobyi Nziza by Patmos Choir.mp4" alt="Video 1" controls></video>
                     <h3>Rwanda Ngobyi Nziza</h3>
                     <p>Indirimbo itaka u Rwanda</p>
@@ -183,7 +189,7 @@
                         <p>5 Stars</p>
                     </div>
                 </div>
-                <div>
+                <div class="item-block">
                     <video src="Perle de Vie - Twe Abamumenye (Official Video).mp4" alt="Video 2" controls></video>
                     <h3>Twe Abamumenye</h3>
                     <p>Indirimbo ya Perle</p>
@@ -199,8 +205,8 @@
                         <p>4 Stars</p>
                     </div>
                 </div>
-                <div>
-                    <video src="Icyifuzo by Abiringiyimana Choir.mp4" alt="Video 3" controls></video>
+                <div class="item-block">
+                    <video src="WhatsApp Video 2022-12-17 at 21.57.44.mp4" alt="Video 3" controls></video>
                     <h3>Indirimbo y'ubukwe</h3>
                     <p>Abiringiyimana </p>
                     <div class="author">
@@ -214,7 +220,7 @@
                         <p>3 Stars</p>
                     </div>
                 </div>
-                <div>
+                <div class="item-block">
                     <video src="NIMWUBAHE IMANA by CREDO SINGERS -- SDA KIGALI - RWANDA -- OFFICIAL VIDEO 2020.mp4"
                         alt="Video 4" controls></video>
                     <h3>Three cosmic messages</h3>
@@ -274,7 +280,7 @@
             </div>
         </div>
         <h1>
-            <p>Don't hestate to reach us!</p>
+            <p>Don't hesitate to reach us!</p>
         </h1>
     </footer>
 </body>
