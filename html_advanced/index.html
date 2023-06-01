@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>My Second git addWebsite</title>
+    <title>My Second Website</title>
     <style>
         header {
             display: flex;
@@ -17,13 +17,40 @@
         .links {
             order: 2;
         }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section>div:nth-child(2)>div {
+            display: flex;
+        }
+
+        section>div:nth-child(2)>div>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section>div:nth-child(2)>div>div>img {
+            margin: 0 10px;
+            /* Adjust the margin as needed */
+        }
     </style>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <a href="#"><img src="logo.png" alt="Logo"></a>
+            <a href="#"><img src="Logo.png" alt="Logo"></a>
         </div>
         <div class="links">
             <a href="#">Link</a>
@@ -31,6 +58,41 @@
             <a href="#">Link</a>
         </div>
     </header>
+
+    <main>
+        <section>
+            <div>
+                <h1>CareAfrica Company</h1>
+                <p>Our precious life</p>
+                <button>Click here</button>
+            </div>
+            <div>
+                <h2>The entire staff</h2>
+                <div>
+                    <div>
+                        <img src="download.jpeg" alt="Image 1">
+                        <h3>Dr. Nyagero</h3>
+                        <p>Director</p>
+                    </div>
+                    <div>
+                        <img src="download (1).jpeg" alt="Image 2">
+                        <h3>Mr. Tommy</h3>
+                        <p>Communication Officer</p>
+                    </div>
+                    <div>
+                        <img src="download (2).jpeg" alt="Image 3">
+                        <h3>Dr. Dimtri</h3>
+                        <p>Tresurer</p>
+                    </div>
+                    <div>
+                        <img src="download (3).jpeg" alt="Image 4">
+                        <h3>Prof. Lyambaje</h3>
+                        <p>Human resources</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
