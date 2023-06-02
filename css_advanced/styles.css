@@ -21,7 +21,10 @@ header {
     height: 40px;
     width: 20px;
 }
+.free {
+    background: #071629;
 
+}
 
 .quotes {
     background: #C271FF;
