@@ -18,18 +18,21 @@ class LRUCache(BaseCaching):
 
     def put(self, key, item):
         """ Add an item to the cache with LRU algorithm.
-        If the number of items exceeds MAX_ITEMS, discard the least recently used one.
+        If the number of items exceeds MAX_ITEMS, discard
+          the least recently used one.
         """
         if key is None or item is None:
             return
 
-        # If the key already exists, we should move it to the end to show that it was recently used
+        # If the key already exists, we should move it to 
+        # the end to show that it was recently used
         if key in self.cache_data:
             self.cache_data.move_to_end(key)
         
         self.cache_data[key] = item
 
-        # If cache exceeds the MAX_ITEMS, pop the first item which is the least recently used
+        # If cache exceeds the MAX_ITEMS, pop the first
+        #  item which is the least recently used
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             # Pop the first item in the OrderedDict
             discarded_key, _ = self.cache_data.popitem(last=False)
