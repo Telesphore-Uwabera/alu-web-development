@@ -22,7 +22,6 @@ class MRUCache(BaseCaching):
     def put(self, key, item):
         """
         Add an item in the cache.
-        
         If the cache exceeds its maximum size, discard the most
         recently used item.
         """
