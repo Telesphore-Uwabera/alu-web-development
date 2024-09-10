@@ -1,41 +1,55 @@
-from collections import OrderedDict
+#!/usr/bin/env python3
+"""
+MRUCache module
+"""
+
 from base_caching import BaseCaching
 
+
 class MRUCache(BaseCaching):
-    """ MRUCache class that implements a Most Recently Used (MRU) caching system """
+    """
+    MRUCache class that inherits from BaseCaching and implements
+    a Most Recently Used (MRU) caching system.
+    """
 
     def __init__(self):
-        """ Initialize the MRUCache """
+        """
+        Initialize the MRUCache.
+        """
         super().__init__()
-        self.cache_data = OrderedDict()
+        self.order = []
 
     def put(self, key, item):
-        """ Add an item to the cache, following MRU policy """
+        """
+        Add an item in the cache.
+        
+        If the cache exceeds its maximum size, discard the most
+        recently used item.
+        """
         if key is None or item is None:
             return
 
         if key in self.cache_data:
-            # Remove the existing item to update its position in the MRU order
-            self.cache_data.pop(key)
+            self.order.remove(key)
+        elif len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+            # Discard the most recently used item
+            mru_key = self.order.pop()
+            del self.cache_data[mru_key]
+            print(f"DISCARD: {mru_key}")
 
+        # Add/Update the cache
         self.cache_data[key] = item
-
-        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-            # Pop the most recently used item (the last item in the OrderedDict)
-            discarded_key, _ = self.cache_data.popitem(last=True)
-            print(f"DISCARD: {discarded_key}")
+        self.order.append(key)
 
     def get(self, key):
-        """ Retrieve an item from the cache """
+        """
+        Get an item by key.
+        """
         if key is None or key not in self.cache_data:
             return None
 
-        # Move the accessed item to the end to mark it as most recently used
-        self.cache_data.move_to_end(key)
-        return self.cache_data[key]
+        # Update the order since this key was most recently accessed
+        self.order.remove(key)
+        self.order.append(key)
 
-    def print_cache(self):
-        """ Print the cache """
-        print("Current cache:")
-        for key, value in self.cache_data.items():
-            print(f"{key}: {value}")
+        return self.cache_data[key]
