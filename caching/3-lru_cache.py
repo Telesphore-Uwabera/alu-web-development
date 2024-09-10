@@ -14,7 +14,8 @@ class LRUCache(BaseCaching):
     def __init__(self):
         """ Initialize the LRU Cache. """
         super().__init__()
-        self.cache_data = OrderedDict()  # Use OrderedDict to maintain order of access
+        self.cache_data = OrderedDict()
+         # Use OrderedDict to maintain order of access
 
     def put(self, key, item):
         """ Add an item to the cache with LRU algorithm.
@@ -23,12 +24,10 @@ class LRUCache(BaseCaching):
         """
         if key is None or item is None:
             return
-
-        # If the key already exists, we should move it to 
+        # If the key already exists, we should move it to
         # the end to show that it was recently used
         if key in self.cache_data:
-            self.cache_data.move_to_end(key)
-        
+            self.cache_data.move_to_end(key) 
         self.cache_data[key] = item
 
         # If cache exceeds the MAX_ITEMS, pop the first
@@ -45,7 +44,6 @@ class LRUCache(BaseCaching):
         """
         if key is None or key not in self.cache_data:
             return None
-        
         # Move the accessed key to the end to show it was recently used
         self.cache_data.move_to_end(key)
         return self.cache_data[key]
