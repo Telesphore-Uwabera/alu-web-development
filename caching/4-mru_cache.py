@@ -23,13 +23,11 @@ class MRUCache(BaseCaching):
         if key is None or item is None:
             return
 
-        # If key already exists, delete it so we can add it back as the most recently used
         if key in self.cache_data:
             del self.cache_data[key]
 
         self.cache_data[key] = item
 
-        # If cache exceeds the MAX_ITEMS, pop the last item which is the most recently used
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             discarded_key, _ = self.cache_data.popitem(last=True)
             print(f"DISCARD: {discarded_key}")
