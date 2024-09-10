@@ -40,4 +40,3 @@ class FIFOCache(BaseCaching):
         If key is None or not in cache, return None.
         """
         return self.cache_data.get(key, None)
-
