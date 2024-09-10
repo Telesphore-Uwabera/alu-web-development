@@ -23,4 +23,3 @@ class BasicCache(BaseCaching):
          self.cache_data, return None.
         """
         return self.cache_data.get(key, None)
-
