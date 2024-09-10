@@ -46,7 +46,8 @@ class LFUCache(BaseCaching):
 
                 # If there's a tie, use LRU (least recent in order)
                 if len(least_used) > 1:
-                    lru_key = min(least_used, key=lambda k: self.order[k])
+                    lru_key = min(least_used,
+                                   key=lambda k: self.order[k])
                 else:
                     lru_key = least_used[0]
 
